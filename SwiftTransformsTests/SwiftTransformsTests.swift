@@ -12,13 +12,10 @@ import SwiftTransforms
 
 class SwiftTransformsTests: XCTestCase {
     
-	// MARK: - CGAffineTransform
-	typealias Transform = CGAffineTransform
-
-	typealias S = SwiftTransformsTests
-
+	// Testing values
 	static let xi = 10
 	static let yi = 11
+	typealias S = SwiftTransformsTests
 
 	let x = CGFloat(S.xi)
 	let y = CGFloat(S.yi)
@@ -27,27 +24,31 @@ class SwiftTransformsTests: XCTestCase {
 	let xi: Int = S.xi
 	let yi: Int = S.yi
 
+	// MARK: - CGAffineTransform
+	typealias Transform = CGAffineTransform
+
+
 	// MARK: Equality
 	func testEquality() {
 		XCTAssertTrue(Transform() == Transform())
 		XCTAssertFalse(Transform() == CGAffineTransformIdentity)
 		XCTAssertTrue(CGAffineTransformIdentity == CGAffineTransformIdentity)
-		XCTAssertTrue(Transform(tx: x, ty: y) == Transform(a: 1, b: 0, c: 0, d: 1, tx: x, ty: y))
+		XCTAssertTrue(Transform(translatex: x, y: y) == Transform(a: 1, b: 0, c: 0, d: 1, tx: x, ty: y))
 	}
 
 	// MARK: Inits
 	func testScaleInit() {
-		XCTAssertTrue(Transform(sx: x, sy: y) == CGAffineTransformMakeScale(x, y))
-		XCTAssertTrue(Transform(sx: xi, sy: yi) == Transform(sx: xd, sy: yd)	)
+		XCTAssertTrue(Transform(scalex: x, y: y) == CGAffineTransformMakeScale(x, y))
+		XCTAssertTrue(Transform(scalex: xi, y: yi) == Transform(scalex: xd, y: yd)	)
 	}
 
 	func testTranslateInit() {
-		XCTAssertTrue(Transform(tx: x, ty: y) == CGAffineTransformMakeTranslation(x, y))
-		XCTAssertTrue(Transform(tx: xi, ty: yi) == Transform(tx: xd, ty: yd))
+		XCTAssertTrue(Transform(translatex: x, y: y) == CGAffineTransformMakeTranslation(x, y))
+		XCTAssertTrue(Transform(translatex: xi, y: yi) == Transform(translatex: xd, y: yd))
 	}
 
 	func testRotateInit() {
-		XCTAssertTrue(Transform(angle: x) == CGAffineTransformMakeRotation(x))
-		XCTAssertTrue(Transform(angle: xi) == Transform(angle: xd))
+		XCTAssertTrue(Transform(rotate: x) == CGAffineTransformMakeRotation(x))
+		XCTAssertTrue(Transform(rotate: xi) == Transform(rotate: xd))
 	}
 }

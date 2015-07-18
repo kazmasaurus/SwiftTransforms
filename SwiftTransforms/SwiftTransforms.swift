@@ -26,20 +26,20 @@ extension CGAffineTransform: Equatable {
 	}
 
 	// MARK: Scale
-	public init(sx: CGFloat, sy: CGFloat) { self.init(a: sx, b: 0, c: 0, d: sy, tx: 0, ty: 0) }
-	public init(sx: Double, sy: Double) { self.init(sx: F(sx), sy: F(sy)) }
-	public init(sx: Int, sy: Int) { self.init(sx: F(sx), sy: F(sy)) }
+	public init(scalex x: CGFloat, y: CGFloat) { self.init(a: x, b: 0, c: 0, d: y, tx: 0, ty: 0) }
+	public init(scalex x: Double, y: Double) { self.init(scalex: F(x), y: F(y)) }
+	public init(scalex x: Int, y: Int) { self.init(scalex: F(x), y: F(y)) }
 
 	// MARK: Translate
-	public init(tx: CGFloat, ty: CGFloat) { self.init(a: 1, b: 0, c: 0, d: 1, tx: tx, ty: ty) }
-	public init(tx: Double, ty: Double) { self.init(tx: F(tx), ty: F(ty)) }
-	public init(tx: Int, ty: Int) { self.init(tx: F(tx), ty: F(ty)) }
+	public init(translatex x: CGFloat, y: CGFloat) { self.init(a: 1, b: 0, c: 0, d: 1, tx: x, ty: y) }
+	public init(translatex x: Double, y: Double) { self.init(translatex: F(x), y: F(y)) }
+	public init(translatex x: Int, y: Int) { self.init(translatex: F(x), y: F(y)) }
 
-	public init(angle: CGFloat) {
+	public init(rotate angle: CGFloat) {
 		self.init(a: cos(angle), b: sin(angle), c: -sin(angle), d: cos(angle), tx: 0, ty: 0)
 	}
-	public init(angle: Double) { self.init(angle: F(angle)) }
-	public init(angle: Int) { self.init(angle: F(angle)) }
+	public init(rotate angle: Double) { self.init(rotate: F(angle)) }
+	public init(rotate angle: Int) { self.init(rotate: F(angle)) }
 }
 
 
