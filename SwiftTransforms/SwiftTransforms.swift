@@ -17,6 +17,12 @@ extension CGAffineTransform {
 
 	private typealias F = CGFloat // For all the casts
 
+	// MARK: - Constants
+	public static let identityTransform = CGAffineTransformIdentity
+
+	// MARK: - Properties
+	public var isIdentity: Bool { return CGAffineTransformIsIdentity(self) }
+
 	// MARK: - Inits
 	public init(a: Double, b: Double, c: Double, d: Double, tx: Double, ty: Double) {
 		self.init(a: F(a), b: F(b), c: F(c), d: F(d), tx: F(tx), ty: F(ty))
@@ -43,4 +49,3 @@ extension CGAffineTransform {
 	public init(rotate angle: Double) { self.init(rotate: F(angle)) }
 	public init(rotate angle: Int) { self.init(rotate: F(angle)) }
 }
-

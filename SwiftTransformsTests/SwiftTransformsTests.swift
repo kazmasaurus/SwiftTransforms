@@ -36,6 +36,14 @@ class SwiftTransformsTests: XCTestCase {
 		XCTAssertTrue(Transform(translatex: x, y: y) == Transform(a: 1, b: 0, c: 0, d: 1, tx: x, ty: y))
 	}
 
+	// MARK: Identity
+	func testIdentity() {
+		XCTAssertTrue(Transform.identityTransform == CGAffineTransformIdentity)
+		XCTAssertTrue(Transform.identityTransform.isIdentity)
+		XCTAssertTrue(CGAffineTransformIdentity.isIdentity)
+		XCTAssertFalse(Transform(scalex: 10, y: 10).isIdentity)
+	}
+
 	// MARK: Inits
 	func testScaleInit() {
 		XCTAssertTrue(Transform(scalex: x, y: y) == CGAffineTransformMakeScale(x, y))
