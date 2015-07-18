@@ -8,11 +8,12 @@
 
 import Foundation
 
+extension CGAffineTransform: Equatable { }
 public func ==(lhs: CGAffineTransform, rhs: CGAffineTransform) -> Bool {
 	return CGAffineTransformEqualToTransform(lhs, rhs)
 }
 
-extension CGAffineTransform: Equatable {
+extension CGAffineTransform {
 
 	private typealias F = CGFloat // For all the casts
 
@@ -35,6 +36,7 @@ extension CGAffineTransform: Equatable {
 	public init(translatex x: Double, y: Double) { self.init(translatex: F(x), y: F(y)) }
 	public init(translatex x: Int, y: Int) { self.init(translatex: F(x), y: F(y)) }
 
+	// MARK: Rotate
 	public init(rotate angle: CGFloat) {
 		self.init(a: cos(angle), b: sin(angle), c: -sin(angle), d: cos(angle), tx: 0, ty: 0)
 	}
@@ -42,8 +44,3 @@ extension CGAffineTransform: Equatable {
 	public init(rotate angle: Int) { self.init(rotate: F(angle)) }
 }
 
-
-extension CATransform3D {
-
-
-}
