@@ -102,5 +102,9 @@ extension CGAffineTransform {
 	}
 }
 
+extension CGAffineTransform: Printable {
+	public var description: String { return NSStringFromCGAffineTransform(self) }
+}
+
 
 
