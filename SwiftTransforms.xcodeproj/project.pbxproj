@@ -11,6 +11,7 @@
 		3121022E1B5A01B5003B204B /* SwiftTransforms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312102221B5A01B5003B204B /* SwiftTransforms.framework */; };
 		312102351B5A01B5003B204B /* SwiftTransformsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312102341B5A01B5003B204B /* SwiftTransformsTests.swift */; };
 		312102401B5A024A003B204B /* SwiftTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121023F1B5A024A003B204B /* SwiftTransforms.swift */; };
+		3121024A1B5CCE1B003B204B /* SmokeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312102491B5CCE1B003B204B /* SmokeTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,9 @@
 		312102341B5A01B5003B204B /* SwiftTransformsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTransformsTests.swift; sourceTree = "<group>"; };
 		3121023E1B5A01C7003B204B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3121023F1B5A024A003B204B /* SwiftTransforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTransforms.swift; sourceTree = "<group>"; };
+		312102451B5CCE1B003B204B /* SmokeTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmokeTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		312102481B5CCE1B003B204B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		312102491B5CCE1B003B204B /* SmokeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		312102421B5CCE1B003B204B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +70,7 @@
 				3121023E1B5A01C7003B204B /* README.md */,
 				312102241B5A01B5003B204B /* SwiftTransforms */,
 				312102311B5A01B5003B204B /* SwiftTransformsTests */,
+				312102461B5CCE1B003B204B /* SmokeTest */,
 				312102231B5A01B5003B204B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +80,7 @@
 			children = (
 				312102221B5A01B5003B204B /* SwiftTransforms.framework */,
 				3121022D1B5A01B5003B204B /* SwiftTransformsTests.xctest */,
+				312102451B5CCE1B003B204B /* SmokeTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +116,23 @@
 			isa = PBXGroup;
 			children = (
 				312102331B5A01B5003B204B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		312102461B5CCE1B003B204B /* SmokeTest */ = {
+			isa = PBXGroup;
+			children = (
+				312102491B5CCE1B003B204B /* SmokeTest.swift */,
+				312102471B5CCE1B003B204B /* Supporting Files */,
+			);
+			path = SmokeTest;
+			sourceTree = "<group>";
+		};
+		312102471B5CCE1B003B204B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				312102481B5CCE1B003B204B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -157,6 +187,23 @@
 			productReference = 3121022D1B5A01B5003B204B /* SwiftTransformsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		312102441B5CCE1B003B204B /* SmokeTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3121024D1B5CCE1B003B204B /* Build configuration list for PBXNativeTarget "SmokeTest" */;
+			buildPhases = (
+				312102411B5CCE1B003B204B /* Sources */,
+				312102421B5CCE1B003B204B /* Frameworks */,
+				312102431B5CCE1B003B204B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmokeTest;
+			productName = SmokeTest;
+			productReference = 312102451B5CCE1B003B204B /* SmokeTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -171,6 +218,9 @@
 						CreatedOnToolsVersion = 6.4;
 					};
 					3121022C1B5A01B5003B204B = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					312102441B5CCE1B003B204B = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
@@ -189,6 +239,7 @@
 			targets = (
 				312102211B5A01B5003B204B /* SwiftTransforms */,
 				3121022C1B5A01B5003B204B /* SwiftTransformsTests */,
+				312102441B5CCE1B003B204B /* SmokeTest */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +253,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3121022B1B5A01B5003B204B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		312102431B5CCE1B003B204B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,6 +282,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				312102351B5A01B5003B204B /* SwiftTransformsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		312102411B5CCE1B003B204B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3121024A1B5CCE1B003B204B /* SmokeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +460,36 @@
 			};
 			name = Release;
 		};
+		3121024B1B5CCE1B003B204B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmokeTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3121024C1B5CCE1B003B204B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmokeTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -423,6 +519,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3121024D1B5CCE1B003B204B /* Build configuration list for PBXNativeTarget "SmokeTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3121024B1B5CCE1B003B204B /* Debug */,
+				3121024C1B5CCE1B003B204B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
