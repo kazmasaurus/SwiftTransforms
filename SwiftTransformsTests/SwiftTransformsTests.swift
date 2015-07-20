@@ -59,4 +59,32 @@ class SwiftTransformsTests: XCTestCase {
 		XCTAssertTrue(Transform(rotate: x) == CGAffineTransformMakeRotation(x))
 		XCTAssertTrue(Transform(rotate: xi) == Transform(rotate: xd))
 	}
+
+	// MARK: - Modifications
+	let transform = Transform.identityTransform.scale(12.0, sy: 13.0).rotate(1.8)
+
+	func testTranslate() {
+		XCTAssertTrue(transform.translate(x, ty: y) == CGAffineTransformTranslate(transform, x, y))
+		XCTAssertTrue(transform.translate(xd, ty: yd) == transform.translate(xi, ty: yi))
+	}
+
+	func testScale() {
+		XCTAssertTrue(transform.scale(x, sy: y) == CGAffineTransformScale(transform, x, y))
+		XCTAssertTrue(transform.scale(xd, sy: yd) == transform.scale(xi, sy: yi))
+	}
+
+	func testRotate() {
+		XCTAssertTrue(transform.rotate(x) == CGAffineTransformRotate(transform, x))
+		XCTAssertTrue(transform.rotate(xd) == transform.rotate(xi))
+	}
+
+	func testInvert() {
+		XCTAssertTrue(transform.invert() == CGAffineTransformInvert(transform))
+		XCTAssertTrue(transform.inverse == transform.invert())
+	}
+
+	func testConcat() {
+		XCTAssertTrue(transform.concat(transform) == CGAffineTransformConcat(transform, transform))
+		XCTAssertTrue(transform * transform == transform.concat(transform))
+	}
 }

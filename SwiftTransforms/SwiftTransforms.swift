@@ -8,9 +8,15 @@
 
 import Foundation
 
+// MARK: - Equality
 extension CGAffineTransform: Equatable { }
 public func ==(lhs: CGAffineTransform, rhs: CGAffineTransform) -> Bool {
 	return CGAffineTransformEqualToTransform(lhs, rhs)
+}
+
+// MARK: - Concatenation
+public func *(lhs: CGAffineTransform, rhs: CGAffineTransform) -> CGAffineTransform {
+	return lhs.concat(rhs)
 }
 
 extension CGAffineTransform {
@@ -48,4 +54,53 @@ extension CGAffineTransform {
 	}
 	public init(rotate angle: Double) { self.init(rotate: F(angle)) }
 	public init(rotate angle: Int) { self.init(rotate: F(angle)) }
+
+	// MARK: - Modifications
+	// MARK: Translate
+	public func translate(tx: CGFloat, ty: CGFloat) -> CGAffineTransform {
+		return CGAffineTransformTranslate(self, tx, ty)
+	}
+	public func translate(tx: Double, ty: Double) -> CGAffineTransform {
+		return translate(F(tx), ty: F(ty))
+	}
+	public func translate(tx: Int, ty: Int) -> CGAffineTransform {
+		return translate(F(tx), ty: F(ty))
+	}
+
+	// MARK: Scale
+	public func scale(sx: CGFloat, sy: CGFloat) -> CGAffineTransform {
+		return CGAffineTransformScale(self, sx, sy)
+	}
+	public func scale(sx: Double, sy: Double) -> CGAffineTransform {
+		return CGAffineTransformScale(self, F(sx), F(sy))
+	}
+	public func scale(sx: Int, sy: Int) -> CGAffineTransform {
+		return CGAffineTransformScale(self, F(sx), F(sy))
+	}
+
+	// MARK: Rotate
+	public func rotate(angle: CGFloat) -> CGAffineTransform {
+		return CGAffineTransformRotate(self, angle)
+	}
+	public func rotate(angle: Double) -> CGAffineTransform {
+		return CGAffineTransformRotate(self, F(angle))
+	}
+	public func rotate(angle: Int) -> CGAffineTransform {
+		return CGAffineTransformRotate(self, F(angle))
+	}
+
+	// MARK: Invert
+	public func invert() -> CGAffineTransform {
+		return CGAffineTransformInvert(self)
+	}
+
+	public var inverse: CGAffineTransform { return invert() }
+
+	// MARK: Concat
+	public func concat(transform: CGAffineTransform) -> CGAffineTransform {
+		return CGAffineTransformConcat(self, transform)
+	}
 }
+
+
+

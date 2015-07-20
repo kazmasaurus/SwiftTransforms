@@ -163,6 +163,7 @@
 		312102191B5A01B5003B204B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Zak;
 				TargetAttributes = {
@@ -412,6 +413,7 @@
 				3121023A1B5A01B5003B204B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3121023B1B5A01B5003B204B /* Build configuration list for PBXNativeTarget "SwiftTransformsTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +422,7 @@
 				3121023D1B5A01B5003B204B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
